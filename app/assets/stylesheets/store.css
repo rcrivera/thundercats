@@ -1,0 +1,22 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.product-bubble{
+	border: 1px solid gray;
+	padding: 10px;
+	display: inline-block;
+	width: 31%;
+	font-family: Zapf Chancery, cursive;
+}
+
+.other_than_name{
+	height: 60px;
+	background-color: green;
+	color: white;
+}
+
+.price{
+	text-transform: 
+}

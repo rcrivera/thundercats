@@ -8,13 +8,11 @@
 </head>
 <body>
 <div class='header'>
-	Thundercats
+	<%= link_to "Thundercats",root_path %>
 	<% if user_signed_in? %>
 		Hi <%= current_user.email %>
+		<%= link_to "Products", products_path %>
 		<%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
-	<% else %>
-		Not signed in.
-		<%= link_to "Log In", new_user_session_path %>
 	<% end %>	
 </div>
 <div>
