@@ -7,7 +7,8 @@ $(document).ready(function () {
 		var value = $(this).siblings('.quantity').val();
 		var value_int = parseInt(value);
 
-		var product_id = "Do SOMETHING here"
+		var product_id = $(this).siblings('.product-id').val();
+		//var product_id = $(this).data('product-id');
 
 		if (value_int > 0){
 			//Make an AJAX call
