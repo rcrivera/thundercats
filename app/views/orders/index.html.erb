@@ -1,0 +1,37 @@
+<h1>Orders#index</h1>
+<p>Find me in app/views/orders/index.html.erb</p>
+
+<table class = "order-history-table">
+	<tr> <th width="40">ID</th><th width = "250">Customer Information</th><th>Sub Total</th><th>Sales Tax</th><th>Grand Total</th> </tr>
+	<% @orders.each do |order| %>
+
+		<tr class ="order-detail" data-id="<%= order.id %>">
+			<td><%= order.id %></td>
+			<td><%= order.customer.name %><br>
+					<%= raw prettify_address(order.customer)%><br>
+			</td>
+			<td><%= number_to_currency(order.sub_total) %></td>
+			<td><%= number_to_currency(order.sale_tax) %></td>
+			<td><%= number_to_currency(order.grand_total) %></td>
+		</tr>
+
+		<tr id="contact_info_<%= order.id %>" class ="contact-information">
+			<td colspan="2">
+				<h4>Contact Information</h4>
+				<%= order.customer.email %> <br>
+				<%= order.customer.phone %>
+			<hr>
+			</td>
+			<td colspan="3">
+				<% order.line_items.each do |line_item| %>
+					<%= line_item.quantity %> - 
+					<%= line_item.product.name %>
+					<%= number_to_currency(line_item.unit_price) %> <br>
+				<%end%>
+
+			</td>
+		
+
+		</tr>
+	<%end%>
+</table>

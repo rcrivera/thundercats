@@ -20,3 +20,18 @@
 .price{
 	text-transform: 
 }
+
+.cart{
+	position:absolute;
+	width:200px;
+	right:10px;
+	background-color:beige;
+}
+
+.cart-panel{
+	position:relative;
+}
+
+#cart_detail_panel{
+	display: none;
+}

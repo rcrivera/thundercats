@@ -1,4 +1,5 @@
 Thundercats::Application.routes.draw do
+  get "orders/index"
   get "store/index"
   devise_for :users
   resources :customers
@@ -7,6 +8,8 @@ Thundercats::Application.routes.draw do
   resources :products
 
   post "products/assign_category", :as => :assign_category
+
+  get "products-by-category/:category_id" => "store#index", as: :products_by_category
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

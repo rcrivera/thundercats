@@ -9,9 +9,17 @@
 <body>
 <div class='header'>
 	<%= link_to "Thundercats",root_path %>
+
+	<%= link_to "All",root_path %>
+
+	<% Category.order('name asc').each do |category|%>
+		<%= link_to category.name, products_by_category_path({category_id: category.id}) %>
+	<% end %>
+
 	<% if user_signed_in? %>
 		Hi <%= current_user.email %>
 		<%= link_to "Products", products_path %>
+		<%= link_to "Orders", orders_index_path %>
 		<%= link_to "Log Out", destroy_user_session_path, method: "delete" %>
 	<% end %>	
 </div>
